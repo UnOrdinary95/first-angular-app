@@ -1,4 +1,4 @@
-header{
+header {
     display: flex;
     padding-inline: 16px;
     padding-block: 8px;
@@ -6,4 +6,25 @@ header{
     color: white;
     align-items: center;
     justify-content: space-between;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul {
+    list-style-type: none;
+}
+
+nav > ul > li:hover {
+    color: #777;
+    cursor: pointer;
+}
+
+nav > span:hover {
+    color: #777;
+    cursor: pointer;
 }
