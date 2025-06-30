@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { TodosService } from '../services/todos';
+import { Todo } from '../models/todo.type';
 
 @Component({
-  selector: 'app-todos',
-  imports: [],
-  templateUrl: './todos.html',
-  styleUrl: './todos.css'
+    selector: 'app-todos',
+    imports: [],
+    templateUrl: './todos.html',
+    styleUrl: './todos.css'
 })
-export class Todos {
+export class Todos implements OnInit {
+    todoService = inject(TodosService);
 
+    todoItems = signal<Array<Todo>>([]);
+
+    ngOnInit(): void {
+        console.log(this.todoService.todoItems);
+        this.todoItems.set(this.todoService.todoItems);
+    }
 }
